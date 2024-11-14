@@ -1,50 +1,16 @@
 ---
-icon: hand-pointer
+icon: book-open
 ---
 
-# Interactive blocks
+# Initial setup
 
-In addition to the default Markdown you can write, GitBook has a number of out-of-the-box interactive blocks you can use. You can find interactive blocks by pressing `/` from within the editor.
+Begin by navigating to the Supership [settings](https://www.supership.is/settings) page.
 
-<figure><img src="https://gitbookio.github.io/onboarding-template-images/interactive-hero.png" alt=""><figcaption></figcaption></figure>
+Find out your `teamId` as well as your `API key`
 
-### Tabs
-
-{% tabs %}
-{% tab title="First tab" %}
-Each tab is like a mini page — it can contain multiple other blocks, of any type. So you can add code blocks, images, integration blocks and more to individual tabs in the same tab block.
-{% endtab %}
-
-{% tab title="Second tab" %}
-Add images, embedded content, code blocks, and more.
-
-```javascript
-const handleFetchEvent = async (request, context) => {
-    return new Response({message: "Hello World"});
-};
-```
-{% endtab %}
-{% endtabs %}
-
-### Expandable sections
-
-<details>
-
-<summary>Click me to expand</summary>
-
-Expandable blocks are helpful in condensing what could otherwise be a lengthy paragraph. They are also great in step-by-step guides and FAQs.
-
-</details>
-
-### Drawings
-
-<img alt="" class="gitbook-drawing">
-
-### Embedded content
-
-{% embed url="https://www.youtube.com/watch?v=YILlrDYzAm4" %}
+<figure><img src="../.gitbook/assets/CleanShot 2024-11-14 at 16.10.23.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-GitBook supports thousands of embedded websites out-of-the-box, simply by pasting their links. Feel free to check out which ones[ are supported natively](https://iframely.com).
+Please note that this requires `admin` privileges in the team.
 {% endhint %}
 

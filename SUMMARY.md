@@ -4,9 +4,9 @@
 
 ## API
 
-* [Introduction](api/interactive-blocks.md)
-* [POST Shipment](api/openapi.md)
-* [GET Shipment](api/openapi-1.md)
+* [Initial setup](api/interactive-blocks.md)
+* [POST Shipment](api/shipments-post.md)
+* [GET Shipment](api/shipments-get.md)
 
 ***
 
