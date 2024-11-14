@@ -1,65 +1,179 @@
 openapi: 3.0.0
 info:
-  title: Super
+  title: Supership API
   version: 1.0.0
+  description: |
+    SuperShip Delivery API enables seamless creation and management of shipments.
+    Features include age verification, authentication requirements, and flexible metadata support.
+  contact:
+    name: Supership Support
+    email: dev@supership.is
+  license:
+    name: Proprietary
 servers:
-  - url: http://127.0.0.1:3333
+  - url: https://supership.is
+    description: Production server
+  - url: https://dev.supership.is
+    description: Development server
+
 components:
   securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
+      bearerFormat: JWT
+      description: JWT token obtained from authentication endpoint
+
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+
+    Meta:
+      type: object
+      required: [key, value]
+      properties:
+        key:
+          type: string
+          example: "Paid"
+        value:
+          type: string
+          example: "true"
+
+    ShipmentRequest:
+      type: object
+      required:
+        - orderId
+      properties:
+        orderId:
+          type: string
+          description: Unique identifier in the client system
+        name:
+          type: string
+          minLength: 2
+          maxLength: 100
+          description: Full name of the recipient
+        email:
+          type: string
+          format: email
+          description: Contact email for delivery updates
+        phone:
+          type: string
+          pattern: "^[0-9]{7}$"
+          description: Phone number without country code
+        ssn:
+          type: string
+          description: Social security number for identity verification
+        address1:
+          type: string
+          description: Primary delivery address
+        address2:
+          type: string
+          description: Additional address details (apartment, suite, etc)
+        zipcode:
+          type: string
+          description: Postal code
+        ageRestriction:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: Minimum age required for delivery
+        ssnExactMatch:
+          type: string
+          description: Exact SSN match requirement for restricted deliveries
+        authRequired:
+          type: boolean
+          description: Whether recipient authentication is required
+        city:
+          type: string
+        country:
+          type: string
+          pattern: "^[A-Z]{2}$"
+          description: Two-letter ISO country code
+        note:
+          type: string
+          maxLength: 500
+          description: Delivery instructions
+        meta:
+          type: array
+          items:
+            $ref: "#/components/schemas/Meta"
+          description: Additional metadata key-value pairs
+
+    ShipmentResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for tracking the shipment
+
+  responses:
+    Error400:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    Error401:
+      description: Unauthorized
+    Error403:
+      description: Forbidden
+    Error500:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+
 tags:
-  - name: SuperShip
+  - name: Shipments
+    description: Endpoints for managing deliveries and shipments
+
 paths:
-  /api/v1/shipment/create/30:
+  /api/v1/shipments:
     post:
       tags:
-        - SuperShip
-      summary: Create shipment API
-      description: >-
-        The API endpoint sends a POST request to create a shipment with the
-        provided payload. The request body includes the name, email, phone,
-        social security number (SSN), address, age restriction, authentication
-        requirement, city, country, note, and additional metadata.
-
-
-        The response of this request is a JSON schema representing the structure
-        of the response data.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                name: John Doe
-                email: john@doe.com
-                phone: '5812345'
-                ssn: '101011010'
-                address1: White Castle 1
-                address2: ''
-                zipcode: '600'
-                ageRestriction: 18
-                ssnExactMatch: '0301972599'
-                authRequired: true
-                city: Springfield
-                country: IS
-                note: Please knock, doorbell is broken
-                meta:
-                  - key: Paid
-                    value: 'true'
-                  - key: Gift
-                    value: 'false'
+        - Shipments
+      summary: Create a new shipment
+      description: |
+        Creates a new shipment with recipient details, delivery requirements, and metadata.
+        Supports age verification and authentication requirements.
       security:
         - bearerAuth: []
       parameters:
         - name: X-Team-ID
           in: header
+          required: true
           schema:
             type: string
-          example: 3205fc52-bced-45ef-8e2b-2c5eb3b1186c
+            format: uuid
+          description: Team identifier for tracking and authorization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ShipmentRequest"
       responses:
-        '200':
-          description: Successful response
+        "200":
+          description: Shipment created successfully
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ShipmentResponse"
+        "400":
+          $ref: "#/components/responses/Error400"
+        "401":
+          $ref: "#/components/responses/Error401"
+        "403":
+          $ref: "#/components/responses/Error403"
+        "500":
+          $ref: "#/components/responses/Error500"
