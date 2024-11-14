@@ -4,10 +4,10 @@
 
 ## API
 
-* [Initial setup](api/interactive-blocks.md)
-* [POST Shipment](api/shipments-post.md)
-* [GET Shipment](api/shipments-get.md)
+* [Initial setup](api/setup.md)
+* [POST Shipment](api/openapi.md)
+* [GET Shipment](api/openapi-1.md)
 
 ***
 
-* [Aðstoð](adstod.md)
+* [Support](support.md)
