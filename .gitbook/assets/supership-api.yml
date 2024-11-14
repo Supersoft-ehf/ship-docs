@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: Super
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:3333
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: SuperShip
+paths:
+  /api/v1/shipment/create/30:
+    post:
+      tags:
+        - SuperShip
+      summary: Create shipment API
+      description: >-
+        The API endpoint sends a POST request to create a shipment with the
+        provided payload. The request body includes the name, email, phone,
+        social security number (SSN), address, age restriction, authentication
+        requirement, city, country, note, and additional metadata.
+
+
+        The response of this request is a JSON schema representing the structure
+        of the response data.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: John Doe
+                email: john@doe.com
+                phone: '5812345'
+                ssn: '101011010'
+                address1: White Castle 1
+                address2: ''
+                zipcode: '600'
+                ageRestriction: 18
+                ssnExactMatch: '0301972599'
+                authRequired: true
+                city: Springfield
+                country: IS
+                note: Please knock, doorbell is broken
+                meta:
+                  - key: Paid
+                    value: 'true'
+                  - key: Gift
+                    value: 'false'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Team-ID
+          in: header
+          schema:
+            type: string
+          example: 3205fc52-bced-45ef-8e2b-2c5eb3b1186c
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

@@ -10,4 +10,4 @@
 
 ***
 
-* [Support](support.md)
+* [Aðstoð](adstod.md)
