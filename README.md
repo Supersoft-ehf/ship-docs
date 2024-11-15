@@ -18,12 +18,21 @@ layout:
     visible: true
 ---
 
-# Welcome
+# Supership Documentation
 
-Welcome to the GitBook Starter Template! Here you'll get an overview of all the amazing features GitBook offers to help you build beautiful, interactive documentation.
+### Introduction
 
-You'll see some of the best parts of GitBook in action — and find help on how you can turn this template into your own.
+&#x20;This guide aims to provide you with comprehensive information and resources to help you navigate and make the most of the Supership platform. Whether you are a developer, a project manager, or simply curious about what Supership offers, this documentation serves as your go-to resource.
+
+### Getting Started
+
+To begin using Supership, you'll need to set up your account, configure your settings, and familiarize yourself with the interface. Don't worry; we've broken down the setup process into easy-to-follow steps. Check out our Getting Started Guide to embark on your Supership journey.
+
+### Support
+
+Should you encounter any issues or have questions along the way, our support team is ready to assist. Visit the [Support Page](./#support) for more information on how to get in touch with us. We are here to ensure your experience with Supership is smooth and productive.
 
 ### Jump right in
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Create your first site</td><td></td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Basics</strong></td><td>Learn the basics of GitBook</td><td></td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Publish your docs</strong></td><td>Share your docs online</td><td></td><td></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Set up your company to level up your deliveries.</td><td></td><td></td><td><a href="gettings-started.md">gettings-started.md</a></td></tr><tr><td><strong>Supership Basics</strong></td><td>Learn the basics of Supership deliveries.</td><td></td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><strong>Developer docs</strong></td><td>Connect to Supership using APIs.</td><td></td><td></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
+

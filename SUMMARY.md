@@ -1,6 +1,8 @@
 # Table of contents
 
-* [Welcome](README.md)
+* [Supership Documentation](README.md)
+* [Gettings started](gettings-started.md)
+* [The basics](the-basics.md)
 
 ## API
 
@@ -10,4 +12,5 @@
 
 ***
 
+* [Features](features.md)
 * [Support](support.md)
