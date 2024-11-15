@@ -1,3 +1,17 @@
+---
+icon: star
+---
+
 # Features
 
-TODO
+### Age restriction
+
+TODO document
+
+### Exact SSN validation
+
+TODO document
+
+### Automatic order metadata population
+
+TODO document
