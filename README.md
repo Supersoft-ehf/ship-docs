@@ -22,7 +22,7 @@ layout:
 
 ### Introduction
 
-&#x20;This guide aims to provide you with comprehensive information and resources to help you navigate and make the most of the Supership platform. Whether you are a developer, a project manager, or simply curious about what Supership offers, this documentation serves as your go-to resource.
+This guide aims to provide you with comprehensive information and resources to help you navigate and make the most of the Supership platform. Whether you are a developer, a project manager, or simply curious about what the sytem offers, this documentation serves as your go-to resource.
 
 ### Getting Started
 
