@@ -163,7 +163,7 @@ paths:
             schema:
               $ref: "#/components/schemas/ShipmentRequest"
       responses:
-        "200":
+        "201":
           description: Shipment created successfully
           content:
             application/json:

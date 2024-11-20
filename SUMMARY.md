@@ -9,6 +9,7 @@
 * [Initial setup](api/setup.md)
 * [POST Shipment](api/openapi.md)
 * [GET Shipment](api/openapi-1.md)
+* [GET Order](api/shipments-get-1.md)
 
 ***
 

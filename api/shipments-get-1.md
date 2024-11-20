@@ -2,6 +2,6 @@
 icon: left
 ---
 
-# GET Shipment
+# GET Order
 
 ### TODO
